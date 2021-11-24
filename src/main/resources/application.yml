@@ -1,0 +1,25 @@
+spring:
+  batch:
+    initialize-schema: always
+  jpa:
+    hibernate:
+      show-sql: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: create
+  datasource:
+    url: jdbc:postgresql://localhost:5432/batchdb
+    username: postgres
+    password: passer
+    driver-class-name: org.postgresql.Driver
+    initialize: true
+    #schema: classpath:schema.sql
+    #hikari:
+    #  poolName: Hikari
+    #  auto-commit: false
+
+    initialization-mode: always
+    schema: classpath:data.sql
+    continue-on-error: true
+
+server:
+  port: 8089
